@@ -1,0 +1,51 @@
+name: Deploy Omniparse Backend
+
+on:
+  push:
+    branches: [dev]
+    # Run this workflow ONLY when something inside /backend changes
+    paths:
+      - "backend/**" # any file or sub-folder inside /backend
+      - "!backend/**/*.md" # exclude documentation files
+  workflow_dispatch:
+    # Allows manual triggering of the workflow
+
+jobs:
+  deploy:
+    name: Deploy to Modal
+    runs-on: ubuntu-latest
+    env:
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      MODAL_ENVIRONMENT: ${{ secrets.MODAL_ENVIRONMENT }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install modal
+          pip install python-dotenv
+
+      - name: Configure Modal
+        run: |
+          # Set up Modal token using GitHub secrets
+          modal token set --token-id "$MODAL_TOKEN_ID" --token-secret "$MODAL_TOKEN_SECRET"
+          modal secret list
+
+      - name: Deploy Backend to Modal
+        run: |
+          cd backend
+
+          echo "Deploying backend to Modal..."
+          modal deploy modal_server.py
+
+          echo "Deployment completed successfully!"

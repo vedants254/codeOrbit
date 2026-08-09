@@ -1,0 +1,66 @@
+services:
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    container_name: gitvizz-phoenix
+    ports:
+      - "6006:6006"  # Phoenix UI and OTLP HTTP collector
+      - "4317:4317"  # OTLP gRPC collector
+    environment:
+      - PHOENIX_WORKING_DIR=/mnt/data
+    volumes:
+      - phoenix_data:/mnt/data
+    networks:
+      - gitvizz-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./backend/.env
+    environment:
+      # Override Phoenix settings for local Docker deployment
+      - PHOENIX_COLLECTOR_ENDPOINT=http://phoenix:6006/v1/traces
+      - PHOENIX_PROJECT_NAME=gitvizz-backend
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      - mongo
+      - phoenix
+    networks:
+      - gitvizz-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env.local
+    depends_on:
+      - backend
+    networks:
+      - gitvizz-network
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - gitvizz-network
+
+networks:
+  gitvizz-network:
+    name: gitvizz-network
+    driver: bridge
+
+volumes:
+  mongo-data:
+  phoenix_data:
