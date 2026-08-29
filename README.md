@@ -280,28 +280,6 @@ codeorbit/
 
 ---
 
-## 🔜 Roadmap
-
-**Q1 2026:**
-- [ ] VS Code extension
-- [ ] More language support (Go, Rust, Java)
-- [ ] Enhanced MCP tools (refactoring suggestions)
-- [ ] Performance optimizations
-
-**Q2 2026:**
-- [ ] Real-time collaboration
-- [ ] Security vulnerability detection
-- [ ] Code quality metrics
-- [ ] Team analytics
-
-**Future:**
-- [ ] Mobile apps
-- [ ] JetBrains plugins
-- [ ] Enterprise features
-- [ ] Multi-repo analysis
-
----
-
 ## 🤝 Contributing
 
 We welcome contributions!
@@ -356,8 +334,6 @@ Built with modern tools:
 <div align="center">
 
 **CodeOrbit** - Navigate the orbit of your codebase 🌌
-
-Made with ❤️ by developers, for developers
 
 [Get Started](#-quick-start) • [Documentation](./docs) • [MCP Guide](./QUICK_START_MCP.md)
 
