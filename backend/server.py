@@ -35,7 +35,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="gitvizz API",
+    title="CodeOrbit API",
     description="API for generating text, graphs, and structure from code repositories.",
     lifespan=lifespan,
 )

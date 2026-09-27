@@ -72,33 +72,33 @@ export default function ShareGraphButton({
 
   // Generate share text based on available data
   const generateShareText = useCallback(() => {
-    const baseUrl = 'https://gitvizz.com';
+    const baseUrl = window.location.origin;
     
     // Array of natural, varied text templates
     const templates = [
       {
         withRepo: (repo: string, stats: string) => 
-          `Just mapped out the architecture of ${repo} 🗺️ ${stats}Amazing how connected everything is! Built with GitVizz`,
+          `Just mapped out the architecture of ${repo} 🗺️ ${stats}Amazing how connected everything is! Built with CodeOrbit`,
         withoutRepo: (stats: string) => 
-          `Diving deep into code architecture today 🧭 ${stats}Love seeing how everything connects! #GitVizz`
+          `Diving deep into code architecture today 🧭 ${stats}Love seeing how everything connects! #CodeOrbit`
       },
       {
         withRepo: (repo: string, stats: string) => 
-          `Visualizing the dependencies in ${repo} 📊 ${stats}This is so satisfying to look at! Created with GitVizz`,
+          `Visualizing the dependencies in ${repo} 📊 ${stats}This is so satisfying to look at! Created with CodeOrbit`,
         withoutRepo: (stats: string) => 
-          `Creating beautiful code dependency visualizations ✨ ${stats}There's something magical about seeing code structure! #GitVizz`
+          `Creating beautiful code dependency visualizations ✨ ${stats}There's something magical about seeing code structure! #CodeOrbit`
       },
       {
         withRepo: (repo: string, stats: string) => 
-          `Exploring ${repo}'s codebase structure 🕸️ ${stats}GitVizz makes complex codebases so much easier to understand!`,
+          `Exploring ${repo}'s codebase structure 🕸️ ${stats}CodeOrbit makes complex codebases so much easier to understand!`,
         withoutRepo: (stats: string) => 
-          `Mapping code relationships like a detective 🔍 ${stats}GitVizz turns messy codebases into beautiful graphs!`
+          `Mapping code relationships like a detective 🔍 ${stats}CodeOrbit turns messy codebases into beautiful graphs!`
       },
       {
         withRepo: (repo: string, stats: string) => 
-          `${repo} under the microscope 🔬 ${stats}Never gets old seeing how developers structure their code! #GitVizz`,
+          `${repo} under the microscope 🔬 ${stats}Never gets old seeing how developers structure their code! #CodeOrbit`,
         withoutRepo: (stats: string) => 
-          `Code architecture visualization session 🎨 ${stats}Every codebase tells a story! #GitVizz`
+          `Code architecture visualization session 🎨 ${stats}Every codebase tells a story! #CodeOrbit`
       }
     ];
 
@@ -245,7 +245,7 @@ export default function ShareGraphButton({
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `gitvizz-graph-${Date.now()}.png`;
+      link.download = `codeorbit-graph-${Date.now()}.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

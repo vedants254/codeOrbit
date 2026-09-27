@@ -277,7 +277,7 @@ export function RepoTabs({ prefilledRepo }: { prefilledRepo?: string | null }) {
 
       // Show success toast for auto-fill
       setTimeout(() => {
-        handleSuccess('🚀 Repository URL auto-filled from gitvizz.com link!');
+        handleSuccess('🚀 Repository URL auto-filled from a CodeOrbit link!');
       }, 500);
 
       // Stop pulse animation after 2 seconds
@@ -435,7 +435,11 @@ export function RepoTabs({ prefilledRepo }: { prefilledRepo?: string | null }) {
 
   const handleInstallApp = () => {
     try {
-      const appName = process.env.NEXT_PUBLIC_GITHUB_APP_NAME || 'gitvizz';
+      const appName = process.env.NEXT_PUBLIC_GITHUB_APP_NAME;
+      if (!appName) {
+        handleError('GitHub App name is not configured.');
+        return;
+      }
       window.location.href = `https://github.com/apps/${appName}/installations/new`;
     } catch {
       handleError('Failed to initiate GitHub app installation.');
@@ -444,8 +448,8 @@ export function RepoTabs({ prefilledRepo }: { prefilledRepo?: string | null }) {
 
   const handleManageAccess = () => {
     try {
-      const appName = process.env.NEXT_PUBLIC_GITHUB_APP_NAME || 'gitvizz';
-      if (installationId) {
+      const appName = process.env.NEXT_PUBLIC_GITHUB_APP_NAME;
+      if (installationId && appName) {
         window.open(`https://github.com/apps/${appName}/installations/${installationId}`, '_blank');
       } else {
         window.open('https://github.com/settings/installations', '_blank');
@@ -1008,8 +1012,8 @@ export function RepoTabs({ prefilledRepo }: { prefilledRepo?: string | null }) {
                     ) : (
                       <>
                         <Zap className="h-4 w-4 mr-2" />
-                        <span className="hidden sm:inline">Vizzify</span>
-                        <span className="sm:hidden">Vizzify</span>
+                        <span className="hidden sm:inline">Analyze</span>
+                        <span className="sm:hidden">Analyze</span>
                         <ArrowRight className="h-4 w-4 ml-2" />
                         {repoSize && (
                           <span className="hidden md:inline ml-2 text-xs opacity-75">
@@ -1204,7 +1208,7 @@ export function RepoTabs({ prefilledRepo }: { prefilledRepo?: string | null }) {
                       </div>
                       <h2 className="text-2xl font-semibold mb-2">Connect Your Repositories</h2>
                       <p className="text-muted-foreground max-w-md mb-8">
-                        Install the gitvizz GitHub App to securely access and analyze your
+                        Install the CodeOrbit GitHub App to securely access and analyze your
                         repositories with one click.
                       </p>
                       <Button

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">CodeOrbit context builder preview</title><desc id="desc">A neutral context selection interface.</desc>
+  <rect width="1200" height="700" fill="#0b0f17"/><rect x="32" y="32" width="1136" height="636" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="76" y="96" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodeOrbit · LLM Context Builder</text>
+  <g font-family="Arial, sans-serif" font-size="22"><rect x="76" y="145" width="390" height="440" rx="16" fill="#1e293b"/><text x="112" y="195" fill="#cbd5e1">Selected symbols</text><text x="112" y="255" fill="#a78bfa">✓ API routes</text><text x="112" y="305" fill="#a78bfa">✓ Graph service</text><text x="112" y="355" fill="#a78bfa">✓ Storage models</text><rect x="510" y="145" width="614" height="440" rx="16" fill="#020617"/><text x="550" y="195" fill="#cbd5e1">AI-ready context</text><text x="550" y="255" fill="#64748b">Architecture summary</text><text x="550" y="305" fill="#64748b">Relevant code excerpts</text><text x="550" y="355" fill="#64748b">Dependency relationships</text></g>
+</svg>

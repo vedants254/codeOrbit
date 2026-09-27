@@ -6,8 +6,8 @@ Supports multiple languages including Python, JavaScript, TypeScript, and React/
 """
 
 __version__ = "0.1.1"
-__author__ = "CodeOrbit Team"
-__email__ = "support@codeorbit.dev"
+__author__ = "Vedant Shelkar"
+__email__ = "vedantshelkar02@gmail.com"
 
 from .graph_generator import (
     GraphGenerator,

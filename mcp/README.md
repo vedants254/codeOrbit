@@ -17,15 +17,19 @@ CodeOrbit MCP Server exposes powerful codebase analysis capabilities to AI assis
 
 ### Using `uv` (Recommended)
 
+From the repository root:
+
 ```bash
-cd codeorbit-mcp
+cd mcp
 uv pip install -e .
 ```
 
 ### Using pip
 
+From the repository root:
+
 ```bash
-cd codeorbit-mcp
+cd mcp
 pip install -e .
 ```
 
@@ -248,7 +252,7 @@ We welcome contributions! Areas for improvement:
 
 ## 📝 License
 
-Apache License 2.0 - See LICENSE file for details
+Apache License 2.0. See the [core license](../core/LICENSE) for terms.
 
 ## 🔗 Related Projects
 

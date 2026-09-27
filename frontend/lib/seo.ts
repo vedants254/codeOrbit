@@ -2,6 +2,8 @@
 
 import type { Metadata } from 'next';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 // The configuration shape for your SEO metadata
 export interface SEOConfig {
   title: string;
@@ -44,12 +46,12 @@ export interface SEOConfig {
 
 // Default SEO configuration for your entire site
 export const baseSEOConfig: SEOConfig = {
-  title: 'gitvizz - From Repo to Reasoning Instantly',
+  title: 'CodeOrbit - From Repo to Reasoning Instantly',
   description:
-    'gitvizz helps you understand repository content easily and extract AI-ready plain text from GitHub or local files.',
-  canonical: 'https://gitvizz.com',
+    'CodeOrbit helps you understand repository content and extract AI-ready plain text from GitHub or local files.',
+  canonical: siteUrl,
   keywords: [
-    'gitvizz',
+    'CodeOrbit',
     'GitHub Visualization',
     'Repo to Text',
     'Code to Text',
@@ -61,9 +63,9 @@ export const baseSEOConfig: SEOConfig = {
     'LLM Context',
     'Repository to Text',
   ],
-  authors: [{ name: 'gitvizz Team', url: 'https://gitvizz.com' }],
-  creator: 'gitvizz Team',
-  publisher: 'gitvizz Team',
+  authors: [{ name: 'Vedant Shelkar', url: 'https://github.com/vedants254' }],
+  creator: 'Vedant Shelkar',
+  publisher: 'CodeOrbit',
   robots: {
     index: true,
     follow: true,
@@ -72,23 +74,22 @@ export const baseSEOConfig: SEOConfig = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'gitvizz',
-    title: 'gitvizz - From Repo to Reasoning Instantly',
+    siteName: 'CodeOrbit',
+    title: 'CodeOrbit - From Repo to Reasoning Instantly',
     description:
-      'Visualize and extract code structure effortlessly. Convert repositories to AI-friendly plain text with gitvizz.',
+      'Visualize and extract code structure effortlessly. Convert repositories to AI-friendly plain text with CodeOrbit.',
     images: [
       {
         url: '/og-image.png', // Use the image from /public directory
         width: 1200,
         height: 630,
-        alt: 'gitvizz - From Repo to Reasoning Instantly',
+        alt: 'CodeOrbit - From Repo to Reasoning Instantly',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@your_twitter_handle', // Use your actual Twitter handle
-    title: 'gitvizz - From Repo to Reasoning Instantly',
+    title: 'CodeOrbit - From Repo to Reasoning Instantly',
     description: 'Understand GitHub repositories visually and convert them into AI-ready formats.',
     images: ['/og-image.png'], // Use the image from /public directory
   },
@@ -104,7 +105,7 @@ export function generateSEOMetadata(pageConfig: Partial<SEOConfig> = {}): Metada
   config.twitter = { ...config.twitter, ...pageConfig.twitter };
 
   return {
-    metadataBase: new URL(config.canonical || 'https://codeorbit.dev'),
+    metadataBase: new URL(config.canonical || siteUrl),
     title: config.title,
     description: config.description,
     keywords: config.keywords,
@@ -135,22 +136,23 @@ export const structuredData = {
   website: {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'gitvizz',
-    url: 'https://gitvizz.com',
+    name: 'CodeOrbit',
+    url: siteUrl,
     description: baseSEOConfig.description,
     inLanguage: 'en-US',
   },
   softwareApplication: {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'gitvizz',
+    name: 'CodeOrbit',
     applicationCategory: 'DeveloperTool',
     operatingSystem: 'Web',
     description: baseSEOConfig.description,
-    url: 'https://gitvizz.com',
+    url: siteUrl,
     author: {
-      '@type': 'Organization',
-      name: 'gitvizz Team',
+      '@type': 'Person',
+      name: 'Vedant Shelkar',
+      url: 'https://github.com/vedants254',
     },
     offers: {
       '@type': 'Offer',

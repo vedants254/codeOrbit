@@ -45,7 +45,7 @@ export default function SignInPage() {
             <div className="bg-background/80 backdrop-blur-xl border border-border/40 rounded-2xl shadow-md overflow-hidden">
               {/* Section Header */}
               <div className="px-8 py-6 border-b border-border/30 bg-gradient-to-r from-primary/5 via-transparent to-transparent">
-                <h2 className="text-2xl font-semibold tracking-tight">Sign in to gitvizz</h2>
+                <h2 className="text-2xl font-semibold tracking-tight">Sign in to CodeOrbit</h2>
                 <p className="text-sm text-muted-foreground mt-1">
                   Connect your GitHub account to get started
                 </p>

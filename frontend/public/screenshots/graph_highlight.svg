@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">CodeOrbit dependency view preview</title>
+  <desc id="desc">A neutral highlighted dependency path.</desc>
+  <rect width="1200" height="700" fill="#0b0f17"/><rect x="32" y="32" width="1136" height="636" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="76" y="96" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodeOrbit · Dependency View</text>
+  <g fill="none" stroke="#475569" stroke-width="4"><path d="M170 350H360L510 230 690 350 850 210 1030 350"/><path d="M360 350L510 500 690 350 850 500 1030 350"/></g>
+  <path d="M170 350H360L510 230 690 350 850 210 1030 350" fill="none" stroke="#fb7185" stroke-width="8"/>
+  <g fill="#8b5cf6" stroke="#ddd6fe" stroke-width="4"><circle cx="170" cy="350" r="30"/><circle cx="360" cy="350" r="30"/><circle cx="510" cy="230" r="30"/><circle cx="690" cy="350" r="34"/><circle cx="850" cy="210" r="30"/><circle cx="1030" cy="350" r="30"/><circle cx="510" cy="500" r="26"/><circle cx="850" cy="500" r="26"/></g>
+</svg>

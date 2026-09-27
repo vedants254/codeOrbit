@@ -50,8 +50,7 @@ Click the **Create GitHub App** button at the bottom of the page.
 
 - On the next page, copy your **App ID** and **Client ID** and save them securely.
 - Click **Generate a new client secret**. Copy the generated secret immediately and save it.  
-    _Important: You will not be able to see this secre
-t again._
+  _Important: You will not be able to see this secret again._
 
 ![Screenshot of app credentials and client secret button](https://github.com/user-attachments/assets/a4e50504-e8ca-4b4e-ba05-30e6aee74a2f)
 

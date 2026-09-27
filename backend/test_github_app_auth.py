@@ -55,7 +55,7 @@ def test_github_app_auth():
         headers = {
             "Authorization": f"Bearer {jwt_token}",
             "Accept": "application/vnd.github+json",
-            "User-Agent": "GitVizz-Test"
+            "User-Agent": "CodeOrbit-Test"
         }
         
         # Try to get app information

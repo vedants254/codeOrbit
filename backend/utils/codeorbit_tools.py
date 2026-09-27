@@ -1,7 +1,4 @@
-"""
-GitVizz Tools for Agentic Chat
-Provides LangGraph tools powered by GitVizz for intelligent code analysis
-"""
+"""CodeOrbit tools for agentic chat."""
 
 import json
 import os
@@ -11,25 +8,25 @@ from typing import Dict, List, Any, Optional
 from langchain_core.tools import tool
 
 try:
-    from gitvizz import GraphGenerator, GraphSearchTool
-    GITVIZZ_AVAILABLE = True
+    from codeorbit import GraphGenerator, GraphSearchTool
+    CODEORBIT_AVAILABLE = True
 except ImportError:
-    GITVIZZ_AVAILABLE = False
-    print("⚠️ GitVizz not available - tools will return mock responses")
+    CODEORBIT_AVAILABLE = False
+    print("⚠️ CodeOrbit not available - tools will return mock responses")
 
 from utils.repo_utils import extract_zip_contents, cleanup_temp_files
 
 
-class GitVizzToolsService:
-    """Service providing GitVizz-powered tools for code analysis"""
+class CodeOrbitToolsService:
+    """Service providing CodeOrbit-powered tools for code analysis."""
     
     def __init__(self):
-        self.gitvizz_available = GITVIZZ_AVAILABLE
+        self.codeorbit_available = CODEORBIT_AVAILABLE
         self.graph_generators = {}  # Cache for graph generators by repository
     
     async def get_or_create_graph(self, repository_id: str, zip_file_path: str) -> Optional[GraphGenerator]:
-        """Get or create a GitVizz graph for the repository"""
-        if not self.gitvizz_available:
+        """Get or create a CodeOrbit graph for the repository."""
+        if not self.codeorbit_available:
             return None
         
         # Check cache first
@@ -48,7 +45,7 @@ class GitVizzToolsService:
                 print("No files extracted from ZIP")
                 return None
             
-            # Create GitVizz GraphGenerator from extracted directory
+            # Create a CodeOrbit GraphGenerator from the extracted directory
             graph_generator = GraphGenerator.from_source(temp_extract_dir)
             
             # Cache the graph generator
@@ -60,11 +57,11 @@ class GitVizzToolsService:
             return graph_generator
             
         except Exception as e:
-            print(f"Error creating GitVizz graph: {str(e)}")
+            print(f"Error creating CodeOrbit graph: {str(e)}")
             return None
     
     def create_tools(self, repository_id: str, zip_file_path: str):
-        """Create GitVizz-powered tools for a specific repository"""
+        """Create CodeOrbit-powered tools for a specific repository."""
         
         @tool
         async def analyze_code_structure(query: str = "") -> str:
@@ -78,8 +75,8 @@ class GitVizzToolsService:
             print(f"🔍 Analyzing code structure for repository: {repository_id}")
             print(f"📝 Query focus: {query or 'general overview'}")
             
-            if not self.gitvizz_available:
-                return "GitVizz not available - using mock analysis"
+            if not self.codeorbit_available:
+                return "CodeOrbit not available - using mock analysis"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -128,8 +125,8 @@ class GitVizzToolsService:
             """
             print(f"🔍 Searching code patterns: '{pattern}' with similarity {similarity_threshold}")
             
-            if not self.gitvizz_available:
-                return f"GitVizz not available - would search for pattern: {pattern}"
+            if not self.codeorbit_available:
+                return f"CodeOrbit not available - would search for pattern: {pattern}"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -167,8 +164,8 @@ class GitVizzToolsService:
             """
             print(f"🔍 Analyzing code quality issues for repository: {repository_id}")
             
-            if not self.gitvizz_available:
-                return "GitVizz not available - using mock quality analysis"
+            if not self.codeorbit_available:
+                return "CodeOrbit not available - using mock quality analysis"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -213,8 +210,8 @@ class GitVizzToolsService:
             """
             print(f"🔍 Analyzing dependencies and flow from '{start_component}' to '{end_component}'")
             
-            if not self.gitvizz_available:
-                return f"GitVizz not available - would analyze flow from {start_component} to {end_component}"
+            if not self.codeorbit_available:
+                return f"CodeOrbit not available - would analyze flow from {start_component} to {end_component}"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -286,8 +283,8 @@ class GitVizzToolsService:
             """
             print(f"🔍 Analyzing security and testing aspects for repository: {repository_id}")
             
-            if not self.gitvizz_available:
-                return "GitVizz not available - using mock security/testing analysis"
+            if not self.codeorbit_available:
+                return "CodeOrbit not available - using mock security/testing analysis"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -327,8 +324,8 @@ class GitVizzToolsService:
             """
             print(f"📊 Getting repository statistics for: {repository_id}")
             
-            if not self.gitvizz_available:
-                return "GitVizz not available - using mock statistics"
+            if not self.codeorbit_available:
+                return "CodeOrbit not available - using mock statistics"
             
             try:
                 graph = await self.get_or_create_graph(repository_id, zip_file_path)
@@ -385,4 +382,4 @@ Repository Statistics and Metrics:
 
 
 # Global service instance
-gitvizz_tools_service = GitVizzToolsService()
+codeorbit_tools_service = CodeOrbitToolsService()

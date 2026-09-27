@@ -51,10 +51,10 @@ def initialize_observability() -> None:
         from phoenix.otel import register
 
         register(
-            project_name=os.getenv("PHOENIX_PROJECT_NAME", "gitvizz-backend"),
+            project_name=os.getenv("PHOENIX_PROJECT_NAME", "codeorbit-backend"),
             auto_instrument=True,
         )
         deployment_type = "cloud" if is_cloud_deployment else "local"
         logger.info(f"Phoenix observability initialized and auto-instrumented for {deployment_type} deployment.")
     except Exception as exc:  # Pragmatic catch to avoid blocking app start
-        logger.warning(f"Phoenix initialization failed: {exc}") 
+        logger.warning(f"Phoenix initialization failed: {exc}")

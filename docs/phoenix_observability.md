@@ -1,10 +1,10 @@
 # Phoenix Observability Setup
 
-This guide explains how to set up Arize Phoenix for LLM observability and tracing in GitVizz. Phoenix provides comprehensive monitoring, debugging, and evaluation capabilities for your LLM-powered features.
+This guide explains how to set up Arize Phoenix for LLM observability and tracing in CodeOrbit. Phoenix provides comprehensive monitoring, debugging, and evaluation capabilities for your LLM-powered features.
 
 ## Overview
 
-GitVizz supports both local (self-hosted) and cloud-based Phoenix deployments:
+CodeOrbit supports both local (self-hosted) and cloud-based Phoenix deployments:
 
 - **Local Phoenix**: Self-hosted using Docker, ideal for development and on-premise deployments
 - **Phoenix Cloud**: Managed service with advanced features and collaboration tools
@@ -14,7 +14,7 @@ GitVizz supports both local (self-hosted) and cloud-based Phoenix deployments:
 ### Prerequisites
 
 - Docker and Docker Compose installed
-- GitVizz project setup
+- CodeOrbit project setup
 
 ### Quick Start
 
@@ -70,7 +70,7 @@ Update your `.env` file:
 # For Phoenix Cloud deployment
 PHOENIX_API_KEY=your-phoenix-api-key-here
 PHOENIX_COLLECTOR_ENDPOINT=https://app.phoenix.arize.com/v1/traces
-PHOENIX_PROJECT_NAME=gitvizz-backend
+PHOENIX_PROJECT_NAME=codeorbit-backend
 ```
 
 Then restart your services:
@@ -86,11 +86,11 @@ docker-compose up --build
 |----------|----------|---------|-------------|
 | `PHOENIX_COLLECTOR_ENDPOINT` | Yes | `http://phoenix:6006/v1/traces` | Phoenix collector endpoint |
 | `PHOENIX_API_KEY` | Cloud only | - | API key for Phoenix Cloud |
-| `PHOENIX_PROJECT_NAME` | No | `gitvizz-backend` | Project name in Phoenix |
+| `PHOENIX_PROJECT_NAME` | No | `codeorbit-backend` | Project name in Phoenix |
 
 ## Features Monitored
 
-Phoenix tracks the following GitVizz features:
+Phoenix tracks the following CodeOrbit features:
 
 - **LLM Calls**: All AI model interactions (OpenAI, Anthropic, etc.)
 - **Documentation Generation**: AI-powered code documentation
@@ -147,7 +147,7 @@ docker-compose restart phoenix
 
 ### Testing Phoenix Integration
 
-Use the GitVizz chat feature or documentation generation to trigger LLM calls and see traces in Phoenix.
+Use the CodeOrbit chat feature or documentation generation to trigger LLM calls and see traces in Phoenix.
 
 ### Custom Instrumentation
 

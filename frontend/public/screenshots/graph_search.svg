@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">CodeOrbit graph search preview</title>
+  <desc id="desc">A neutral dependency graph preview with a search panel.</desc>
+  <rect width="1200" height="700" fill="#0b0f17"/>
+  <rect x="32" y="32" width="1136" height="636" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="76" y="96" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodeOrbit · Graph Search</text>
+  <rect x="76" y="130" width="370" height="54" rx="12" fill="#1e293b" stroke="#8b5cf6"/>
+  <text x="100" y="165" fill="#94a3b8" font-family="monospace" font-size="20">Search symbols and dependencies</text>
+  <g stroke="#64748b" stroke-width="3"><path d="M580 230L760 170 900 280 760 390 560 490 410 350Z"/><path d="M580 230L560 490M760 170L760 390M900 280L560 490"/></g>
+  <g fill="#8b5cf6" stroke="#c4b5fd" stroke-width="4"><circle cx="580" cy="230" r="28"/><circle cx="760" cy="170" r="24"/><circle cx="900" cy="280" r="30"/><circle cx="760" cy="390" r="25"/><circle cx="560" cy="490" r="32"/><circle cx="410" cy="350" r="23"/></g>
+</svg>

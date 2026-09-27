@@ -4,7 +4,6 @@
 
 CodeOrbit is an AI-powered code analysis platform that understands your codebase and connects directly to AI assistants like Claude. Ask questions, understand dependencies, and make changes with full context.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ---
@@ -121,7 +120,7 @@ pip install -e .
 uvicorn server:app --reload
 
 # Frontend  
-cd frontend
+cd ../frontend
 pnpm install
 pnpm dev
 ```
@@ -160,7 +159,7 @@ pnpm dev
 ## 📁 Project Structure
 
 ```
-codeorbit/
+codeOrbit/
 ├── core/           # 📦 Python library for code analysis
 ├── mcp/            # 🔌 MCP server for AI assistants
 ├── backend/        # 🚀 FastAPI web backend
@@ -206,8 +205,8 @@ codeorbit/
 - Compatible with Claude, Cline, and more
 
 **Web Platform:**
-- Backend: FastAPI + Python 3.10+
-- Frontend: Next.js 14 + TypeScript
+- Backend: FastAPI + Python 3.12+
+- Frontend: Next.js 15 + TypeScript
 - UI: Tailwind CSS + ShadCN
 - Viz: Interactive dependency graphs
 
@@ -216,9 +215,7 @@ codeorbit/
 ## 📖 Documentation
 
 - **[MCP Quick Start](./QUICK_START_MCP.md)** - Set up AI integration in 5 minutes
-- **[MCP Tools Reference](./MCP_TOOLS_REFERENCE.md)** - All 8 tools explained
-- **[Node Structure](./NODE_STRUCTURE.md)** - Understanding the graph data
-- **[Folder Structure](./FOLDER_STRUCTURE.md)** - Project organization
+- **[MCP Tools Reference](./mcp/README.md#-available-tools)** - All 8 tools explained
 - **[Core Library](./core/README.md)** - Python API documentation
 - **[MCP Server](./mcp/README.md)** - MCP server details
 
@@ -293,8 +290,8 @@ We welcome contributions!
 
 **Quick start:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/codeorbit.git
-cd codeorbit
+git clone https://github.com/vedants254/codeOrbit.git
+cd codeOrbit
 # Make your changes
 git checkout -b feature/your-feature
 git commit -m "feat: your feature"
@@ -325,8 +322,8 @@ Built with modern tools:
 ## 💬 Support
 
 - 📖 Check the [documentation](./docs)
-- 🐛 [Report issues](https://github.com/YOUR_USERNAME/codeorbit/issues)
-- 💡 [Request features](https://github.com/YOUR_USERNAME/codeorbit/issues)
+- 🐛 [Report issues](https://github.com/vedants254/codeOrbit/issues)
+- 💡 [Request features](https://github.com/vedants254/codeOrbit/issues)
 - ⭐ Star us on GitHub!
 
 ---

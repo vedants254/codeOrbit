@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate:api": "openapi-ts && node scripts/fix-api-client.js",
-    "setup:env": "cp .example.env .env.local && echo 'Environment variables copied to .env.local'",
+    "setup:env": "node -e \"require('fs').copyFileSync('.env.example', '.env.local')\"",
     "setup:secret": "npx auth secret",
     "format": "prettier --write ."
   },

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Dynamic comprehensive test of all GitVizz features.
+Dynamic comprehensive test of all CodeOrbit features.
 This script automatically detects available test sources and adapts to different environments.
 """
 
@@ -13,17 +13,17 @@ import argparse
 import json
 from typing import List, Dict, Optional
 
-# Add the gitvizz package to the path
+# Add the CodeOrbit package to the path
 current_dir = Path(__file__).parent
-gitvizz_root = current_dir.parent
-sys.path.insert(0, str(gitvizz_root))
+codeorbit_root = current_dir.parent
+sys.path.insert(0, str(codeorbit_root))
 
 try:
-    from gitvizz import GraphGenerator, IPYSIGMA_AVAILABLE
-    GITVIZZ_AVAILABLE = True
+    from codeorbit import GraphGenerator, IPYSIGMA_AVAILABLE
+    CODEORBIT_AVAILABLE = True
 except ImportError as e:
-    print(f"❌ GitVizz import failed: {e}")
-    GITVIZZ_AVAILABLE = False
+    print(f"❌ CodeOrbit import failed: {e}")
+    CODEORBIT_AVAILABLE = False
 
 # Configuration for dynamic test sources
 TEST_SOURCES = {
@@ -78,11 +78,11 @@ class DynamicTestRunner:
         """Detect available local directories for testing."""
         sources = []
         
-        # Check for current gitvizz directory
-        if gitvizz_root.exists() and (gitvizz_root / "gitvizz").exists():
+        # Check for the current CodeOrbit package directory
+        if codeorbit_root.exists() and (codeorbit_root / "codeorbit").exists():
             sources.append({
-                "path": str(gitvizz_root / "gitvizz"),
-                "name": "GitVizz Source Code",
+                "path": str(codeorbit_root / "codeorbit"),
+                "name": "CodeOrbit Source Code",
                 "type": "directory"
             })
         
@@ -217,8 +217,8 @@ class DynamicTestRunner:
         print("🎮 Interactive Test Mode")
         print("=" * 40)
         
-        if not GITVIZZ_AVAILABLE:
-            print("❌ GitVizz is not available. Please install it first.")
+        if not CODEORBIT_AVAILABLE:
+            print("❌ CodeOrbit is not available. Please install it first.")
             return
         
         # Detect local sources
@@ -267,8 +267,8 @@ class DynamicTestRunner:
         print("\n🔄 Running Comprehensive Tests")
         print("=" * 40)
         
-        if not GITVIZZ_AVAILABLE:
-            print("❌ GitVizz is not available. Please install it first.")
+        if not CODEORBIT_AVAILABLE:
+            print("❌ CodeOrbit is not available. Please install it first.")
             return
         
         all_results = []
@@ -339,19 +339,19 @@ class DynamicTestRunner:
                 print(f"   - {result['config'].get('name', 'Unknown')}: {result['error']}")
         
         print(f"\n🔧 Environment Info:")
-        print(f"   - GitVizz available: {GITVIZZ_AVAILABLE}")
+        print(f"   - CodeOrbit available: {CODEORBIT_AVAILABLE}")
         print(f"   - ipysigma available: {IPYSIGMA_AVAILABLE}")
         print(f"   - NetworkX integration: ✅")
         
         if len(successful) > 0:
-            print(f"\n🎉 GitVizz is working correctly!")
+            print(f"\n🎉 CodeOrbit is working correctly!")
         else:
             print(f"\n⚠️  No successful tests - check your setup")
 
 def parse_arguments():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description="Dynamic comprehensive test of GitVizz features",
+        description="Dynamic comprehensive test of CodeOrbit features",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -380,7 +380,7 @@ def main():
     """Main entry point with argument parsing and mode selection."""
     args = parse_arguments()
     
-    print("🧪 GitVizz Dynamic Comprehensive Test")
+    print("🧪 CodeOrbit Dynamic Comprehensive Test")
     print("=" * 50)
     
     runner = DynamicTestRunner(args)

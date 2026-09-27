@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">CodeOrbit repository chat preview</title><desc id="desc">A neutral code analysis conversation preview.</desc>
+  <rect width="1200" height="700" fill="#0b0f17"/><rect x="32" y="32" width="1136" height="636" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="76" y="96" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodeOrbit · Repository Chat</text>
+  <rect x="88" y="150" width="690" height="100" rx="18" fill="#1e293b"/><text x="120" y="208" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="24">How does the request flow through this project?</text>
+  <rect x="300" y="290" width="800" height="210" rx="18" fill="#312e81"/><text x="340" y="350" fill="#ede9fe" font-family="Arial, sans-serif" font-size="23">CodeOrbit traced the route through 6 modules.</text><text x="340" y="395" fill="#c4b5fd" font-family="monospace" font-size="20">route → controller → service → storage</text><text x="340" y="440" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="20">Related dependencies are highlighted in the graph.</text>
+</svg>

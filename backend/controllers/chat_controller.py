@@ -624,7 +624,7 @@ Provide detailed, accurate responses based on the repository content. Reference 
     #         # Generate streaming response using appropriate service based on context_mode
     #         try:
     #             if context_mode == "agentic":
-    #                 # Use GitVizz-powered agentic chat service
+    #                 # Use the CodeOrbit-powered agentic chat service
     #                 from utils.agentic_chat_service import agentic_chat_service
                     
     #                 response_generator = agentic_chat_service.stream_agentic_chat_response(

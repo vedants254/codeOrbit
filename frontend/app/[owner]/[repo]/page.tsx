@@ -23,7 +23,7 @@ export default function GitHubStyleRoute() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center space-y-4">
         <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto"></div>
-        <p className="text-sm text-muted-foreground">Redirecting to GitVizz...</p>
+        <p className="text-sm text-muted-foreground">Redirecting to CodeOrbit...</p>
       </div>
     </div>
   );

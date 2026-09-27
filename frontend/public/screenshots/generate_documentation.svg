@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">CodeOrbit documentation generator preview</title><desc id="desc">A neutral generated documentation page.</desc>
+  <rect width="1200" height="700" fill="#0b0f17"/><rect x="32" y="32" width="1136" height="636" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="76" y="96" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodeOrbit · Documentation</text>
+  <rect x="76" y="140" width="1048" height="450" rx="16" fill="#f8fafc"/><text x="125" y="205" fill="#0f172a" font-family="Arial, sans-serif" font-size="30" font-weight="700">Project architecture</text><rect x="125" y="235" width="810" height="14" rx="7" fill="#cbd5e1"/><rect x="125" y="270" width="900" height="14" rx="7" fill="#e2e8f0"/><text x="125" y="345" fill="#0f172a" font-family="Arial, sans-serif" font-size="25" font-weight="700">Core modules</text><rect x="125" y="375" width="760" height="14" rx="7" fill="#cbd5e1"/><rect x="125" y="410" width="850" height="14" rx="7" fill="#e2e8f0"/><rect x="125" y="445" width="670" height="14" rx="7" fill="#e2e8f0"/>
+</svg>

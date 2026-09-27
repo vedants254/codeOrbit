@@ -20,8 +20,8 @@ A production-ready frontend built with **Next.js**, **TypeScript**, **TailwindCS
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CodeOrbit.git
-cd CodeOrbit
+git clone https://github.com/vedants254/codeOrbit.git
+cd codeOrbit/frontend
 ```
 
 ### 2. Install Dependencies
@@ -43,20 +43,22 @@ npm install
 Create a `.env.local` file by copying the example:
 
 ```bash
-cp .example.env .env.local
+cp .env.example .env.local
 ```
+
+Set `NEXT_PUBLIC_SITE_URL` to the deployed frontend URL, and provide the GitHub App and Auth.js credentials documented in `.env.example`.
 
 ### 4. Auth.js Setup
 
 The app uses **Auth.js** for authentication. Configuration is located in:
 
 - `app/api/auth/[...nextauth]/route.ts` - Auth.js API routes
-- `auth.ts` - Auth configuration and providers
+- `utils/auth.ts` - Auth configuration and providers
 
 Run the following command to generate `AUTH_SECRET`:
 
 ```bash
-npm run generate:secret
+pnpm setup:secret
 ```
 
 #### Supported Providers:
@@ -124,13 +126,12 @@ pnpm lint
 │   └── ...               # Other Next.js App Router pages
 ├── components/
 │   └── ui/               # ShadCN components
-└── ...                   # Other resuable
-context
-├── ...                   # React context functions
-├── middleware.ts         # Next.js middleware for route protection
+├── context/              # React context providers
+├── utils/
+│   ├── auth.ts           # Auth.js configuration
+│   └── middleware.ts     # Route protection
 ├── public/               # Static assets (images, icons)
-├── utils/                # API helpers &
-├── .example.env          # Sample environment variables
+├── .env.example          # Sample environment variables
 ├── next.config.ts        # Next.js configuration
 ├── openapi-ts.config.ts  # OpenAPI SDK generation config
 ```
@@ -140,7 +141,7 @@ context
 ## 🛡️ Security Considerations
 
 - **Environment Variables**: Never commit sensitive keys to version control
-- **NEXTAUTH_SECRET**: Use a secure, randomly generated secret in production
+- **AUTH_SECRET**: Use a secure, randomly generated secret in production
 - **HTTPS**: Always use HTTPS in production for Auth.js
 - **Database Security**: If using database sessions, ensure proper connection security
 - **OAuth Apps**: Configure OAuth redirect URIs correctly for each environment
@@ -159,4 +160,4 @@ context
 
 ## 📄 License
 
-This project is licensed under the Apache License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE) for details.

@@ -17,7 +17,7 @@ async def get_github_user(access_token: str) -> dict:
     headers = {
         "Authorization": f"{auth_type} {access_token}",
         "Accept": "application/vnd.github+json",
-        "User-Agent": "GitVizz-Backend/1.0"
+        "User-Agent": "CodeOrbit-Backend/1.0"
     }
 
     async with httpx.AsyncClient() as client:

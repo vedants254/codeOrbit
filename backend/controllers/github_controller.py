@@ -80,7 +80,7 @@ async def get_user_installations(user_id: str) -> GitHubInstallationsResponse:
         headers = {
             "Authorization": f"{auth_type} {access_token}",
             "Accept": "application/vnd.github+json",
-            "User-Agent": "GitVizz-Backend/1.0"  # Adding User-Agent as GitHub requires it
+            "User-Agent": "CodeOrbit-Backend/1.0"  # GitHub requires a User-Agent
         }
         print("[PROD DEBUG] Request setup")
         print(f"[PROD DEBUG] - Auth type: {auth_type}")
@@ -277,7 +277,7 @@ async def get_installation_repositories(
                 headers={
                     "Authorization": f"Bearer {jwt_token}",
                     "Accept": "application/vnd.github+json",
-                    "User-Agent": "GitVizz-Backend/1.0",
+                    "User-Agent": "CodeOrbit-Backend/1.0",
                 }
             )
 

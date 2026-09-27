@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const response = await fetch('https://api.github.com/repos/YOUR_USERNAME/GitVizz', {
+    const response = await fetch('https://api.github.com/repos/vedants254/codeOrbit', {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'GitVizz',
+        'User-Agent': 'CodeOrbit',
       },
       next: { revalidate: 3600 }, // Cache for 1 hour
     });

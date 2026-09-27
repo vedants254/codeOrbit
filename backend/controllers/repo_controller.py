@@ -25,7 +25,7 @@ from utils.file_utils import (
     generate_repo_identifier,
     file_manager,
 )
-from gitvizz import GraphGenerator
+from codeorbit import GraphGenerator
 from models.repository import Repository
 from models.user import User
 

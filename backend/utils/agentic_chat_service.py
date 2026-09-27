@@ -35,7 +35,7 @@ except ImportError:
 
 # Import our services
 from utils.langchain_llm_service import langchain_service
-from utils.gitvizz_tools import gitvizz_tools_service
+from utils.codeorbit_tools import codeorbit_tools_service
 from models.repository import Repository
 
 
@@ -107,9 +107,9 @@ class AgenticLangGraphChatService:
         if not LANGGRAPH_AVAILABLE:
             return None
 
-        # Get GitVizz tools for this repository
-        gitvizz_tools = gitvizz_tools_service.create_tools(repository_id, zip_file_path)
-        tool_node = ToolNode(gitvizz_tools)
+        # Get CodeOrbit tools for this repository
+        codeorbit_tools = codeorbit_tools_service.create_tools(repository_id, zip_file_path)
+        tool_node = ToolNode(codeorbit_tools)
 
         # Create the state graph
         workflow = StateGraph(AgenticChatState)
@@ -202,7 +202,7 @@ class AgenticLangGraphChatService:
     def _generate_tool_instruction(self, user_query: str, analysis_type: str) -> str:
         """Generate specific tool usage instructions"""
         
-        base_instruction = f"""CRITICAL: You MUST use GitVizz tools before responding. This is mandatory.
+        base_instruction = f"""CRITICAL: You MUST use CodeOrbit tools before responding. This is mandatory.
 
 Query Analysis Type: {analysis_type}
 User Query: "{user_query}"
@@ -245,7 +245,7 @@ The tools will provide the data you need to answer the user's question properly.
         """Enhanced agent node with better tool calling"""
         try:
             # Get tools and model
-            gitvizz_tools = gitvizz_tools_service.create_tools(
+            codeorbit_tools = codeorbit_tools_service.create_tools(
                 state["repository_id"], state["repository_zip_path"]
             )
 
@@ -257,10 +257,10 @@ The tools will provide the data you need to answer the user's question properly.
             )
 
             # Bind tools to model
-            llm_with_tools = chat_model.bind_tools(gitvizz_tools)
+            llm_with_tools = chat_model.bind_tools(codeorbit_tools)
 
             # Enhanced system message with stronger tool calling guidance
-            system_message = SystemMessage(content=f"""You are a code analysis assistant with access to GitVizz tools. 
+            system_message = SystemMessage(content=f"""You are a code analysis assistant with access to CodeOrbit tools.
 
 CRITICAL RULES:
 - You MUST use tools before providing any analysis
@@ -269,7 +269,7 @@ CRITICAL RULES:
 - Tools are your primary source of information about this repository
 
 Repository: {state["repository_id"]}
-Available Tools: {[tool.name for tool in gitvizz_tools]}
+Available Tools: {[tool.name for tool in codeorbit_tools]}
 
 Current iteration: {state.get('iteration_count', 0)}
 Tools used so far: {state.get('tools_used', [])}
@@ -287,7 +287,7 @@ If no tools have been used yet, you MUST call the appropriate tool(s) now.""")
             if state.get('iteration_count', 0) == 0 and not state.get('tools_used', []):
                 messages.append(HumanMessage(content=f"Use tools to analyze: {state['original_query']}"))
 
-            logger.info(f"Calling LLM with {len(messages)} messages, tools available: {len(gitvizz_tools)}")
+            logger.info(f"Calling LLM with {len(messages)} messages, tools available: {len(codeorbit_tools)}")
 
             # Get response
             response = await llm_with_tools.ainvoke(messages)
@@ -408,7 +408,7 @@ Provide a clear, structured response that directly answers the user's question u
             if not zip_file_path:
                 yield json.dumps({
                     "event": "error",
-                    "error": "No ZIP file available for GitVizz analysis",
+                    "error": "No ZIP file available for CodeOrbit analysis",
                     "error_type": "no_zip_file"
                 }) + "\n"
                 return
@@ -473,7 +473,7 @@ Provide a clear, structured response that directly answers the user's question u
                         yield json.dumps({
                             "event": "progress",
                             "step": "tool_selection",
-                            "message": "Selecting appropriate GitVizz tools...",
+                            "message": "Selecting appropriate CodeOrbit tools...",
                         }) + "\n"
                     elif "agent_with_tools" in event_name:
                         yield json.dumps({
@@ -557,8 +557,8 @@ Provide a clear, structured response that directly answers the user's question u
                 error_type = "quota_exceeded"
             elif "api key" in error_msg.lower() or "unauthorized" in error_msg.lower():
                 error_type = "no_api_key"
-            elif "gitvizz" in error_msg.lower():
-                error_type = "gitvizz_error"
+            elif "codeorbit" in error_msg.lower():
+                error_type = "codeorbit_error"
 
             yield json.dumps({
                 "event": "error",
@@ -582,7 +582,7 @@ Provide a clear, structured response that directly answers the user's question u
             )
 
             system_msg = SystemMessage(content="""You are a helpful code analysis assistant. 
-While GitVizz tools are not available, provide the best analysis you can based on your knowledge.""")
+While CodeOrbit tools are not available, provide the best analysis you can based on your knowledge.""")
             
             messages = [system_msg, HumanMessage(content=user_query)]
 

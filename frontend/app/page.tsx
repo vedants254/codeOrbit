@@ -61,19 +61,19 @@ function HomeContent() {
     {
       title: 'Graph Search',
       description: 'Interactive dependency graphs with intelligent search capabilities',
-      image: '/screenshots/graph_search.png',
+      image: '/screenshots/graph_search.svg',
       icon: Search,
     },
     {
       title: 'Graph Dependency View',
       description: 'Visual code navigation with smart highlighting and dependency connections',
-      image: '/screenshots/graph_highlight.png',
+      image: '/screenshots/graph_highlight.svg',
       icon: Network,
     },
     {
       title: 'Chat with Repository',
       description: 'AI-powered conversations about your codebase with context-aware responses',
-      image: '/screenshots/chat_with_repo_powered_by_graph.png',
+      image: '/screenshots/chat_with_repo_powered_by_graph.svg',
       icon: MessageSquare,
       comingSoon: true,
       githubContribution: true,
@@ -81,19 +81,19 @@ function HomeContent() {
     {
       title: 'Code Viewer',
       description: 'Advanced code visualization with syntax highlighting and navigation',
-      image: '/screenshots/code_viewer.png',
+      image: '/screenshots/code_viewer.svg',
       icon: Eye,
     },
     {
       title: 'LLM Context Builder',
       description: 'Build comprehensive context for Large Language Models automatically',
-      image: '/screenshots/build_context_for_llms.png',
+      image: '/screenshots/build_context_for_llms.svg',
       icon: Code,
     },
     {
       title: 'Documentation Generator',
       description: 'Automatically generate comprehensive documentation from your repository',
-      image: '/screenshots/generate_documentation.png',
+      image: '/screenshots/generate_documentation.svg',
       icon: FileText,
       comingSoon: true,
       githubContribution: true,
@@ -111,7 +111,7 @@ function HomeContent() {
       {/* Open Source Badge */}
       <div className="flex justify-center mb-4 relative z-10">
         <a
-          href="https://github.com/YOUR_USERNAME/GitVizz"
+          href="https://github.com/vedants254/codeOrbit"
           target="_blank"
           rel="noopener noreferrer"
           className="group"
@@ -141,11 +141,11 @@ function HomeContent() {
             documentation, dependency graphs, and intelligent conversations.
           </p>
 
-          {/* Hub to Vizz Hint */}
+          {/* Direct repository route hint */}
           <div className="inline-flex items-center gap-2 px-3 lg:px-4 py-2 bg-muted/30 backdrop-blur-sm rounded-full border border-border/30 text-xs lg:text-sm text-muted-foreground hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 cursor-default">
             <span className="font-mono">github.com/user/repo</span>
             <span className="text-primary">→</span>
-            <span className="font-mono text-primary font-medium">gitvizz.com/user/repo</span>
+            <span className="font-mono text-primary font-medium">CodeOrbit / user / repo</span>
           </div>
         </div>
         <RepoTabs prefilledRepo={prefilledRepo} />
@@ -215,7 +215,7 @@ function HomeContent() {
                     {feature.githubContribution && (
                       <div className="flex items-center gap-2">
                         <a
-                          href="https://github.com/YOUR_USERNAME/GitVizz"
+                          href="https://github.com/vedants254/codeOrbit"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors group"
@@ -241,7 +241,7 @@ function HomeContent() {
                 Help Us Build the Future
               </h2>
               <p className="text-sm lg:text-base text-muted-foreground">
-                GitVizz is open source and we&apos;re looking for contributors to help us improve
+                CodeOrbit is open source and we&apos;re looking for contributors to help us improve
               </p>
             </div>
 
@@ -256,7 +256,7 @@ function HomeContent() {
                   <h3 className="font-semibold mb-2">{area.title}</h3>
                   <p className="text-xs text-muted-foreground mb-3">{area.description}</p>
                   <a
-                    href="https://github.com/YOUR_USERNAME/GitVizz"
+                    href="https://github.com/vedants254/codeOrbit"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors group"

@@ -69,7 +69,7 @@ def test_search_operations(graph_utils: GraphUtils):
         "main",
         "parse",
         "server",
-        "omniparse",
+        "codeorbit",
         "download"
     ]
     
@@ -117,7 +117,7 @@ def test_category_and_file_searches(graph_utils: GraphUtils):
     
     # Test file searches
     print(f"\n📁 Testing file searches:")
-    file_patterns = ["server.py", "omniparse", "download.py"]
+    file_patterns = ["server.py", "codeorbit", "download.py"]
     
     for pattern in file_patterns:
         result = graph_utils.search_by_file(pattern, limit=10)
@@ -134,7 +134,7 @@ def test_multi_term_search(graph_utils: GraphUtils):
         ["parse", "document"],
         ["server", "main", "app"],
         ["download", "models"],
-        ["omniparse", "client"]
+        ["codeorbit", "client"]
     ]
     
     for terms in test_cases:
@@ -203,7 +203,7 @@ def test_context_generation(graph_utils: GraphUtils):
     test_queries = [
         "server main",
         "parse document", 
-        "omniparse client",
+        "codeorbit client",
         "download models"
     ]
     

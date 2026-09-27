@@ -1,4 +1,4 @@
-name: Deploy Omniparse Backend
+name: Deploy CodeOrbit Backend
 
 on:
   push:

@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Globe, Star } from 'lucide-react';
+import { Github, Star } from 'lucide-react';
 import { NumberTicker } from '@/components/ui/number-ticker';
 import { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/YOUR_USERNAME/GitVizz"
+              href="https://github.com/vedants254/codeOrbit"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Repository"
@@ -38,13 +38,13 @@ const Footer = () => {
 
           {/* Attribution */}
           <div className="text-xs text-muted-foreground text-center md:text-right">
-            GitVizz - Understand Any Codebase in Minutes
+            CodeOrbit - Understand Any Codebase in Minutes
           </div>
         </div>
 
         {/* Bottom copyright */}
         <div className="text-center text-xs text-muted-foreground border-t border-border/30 pt-4">
-          &copy; {new Date().getFullYear()} gitvizz - Understand Any Codebase in Minutes.
+          &copy; {new Date().getFullYear()} CodeOrbit - Understand Any Codebase in Minutes.
         </div>
       </div>
     </footer>

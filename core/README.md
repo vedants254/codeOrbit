@@ -1,21 +1,21 @@
-# 🎯 GitVizz - AI-Powered Code Analysis & Graph Search Library
+# 🎯 CodeOrbit - AI-Powered Code Analysis & Graph Search Library
 
 <div align="center">
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 **The most comprehensive Python library for code analysis, dependency graphing, and intelligent search**
 
-[📚 Documentation](./README.md) • [🔍 Examples](./examples/) • [🛠️ API Reference](./TOOLS_REFERENCE.md)
+[📚 Documentation](./README.md) • [🔍 Examples](./examples/) • [🛠️ API Reference](./docs/TOOLS_REFERENCE.md)
 
 </div>
 
 ---
 
-## ✨ What is GitVizz?
+## ✨ What is CodeOrbit?
 
-GitVizz is a **powerful Python library** that transforms how you analyze and understand codebases. It combines **advanced AST parsing**, **intelligent graph analysis**, and **20+ specialized search tools** to provide unprecedented insights into your code.
+CodeOrbit is a **powerful Python library** that transforms how you analyze and understand codebases. It combines **advanced AST parsing**, **intelligent graph analysis**, and **20+ specialized search tools** to provide unprecedented insights into your code.
 
 ### 🎯 **Core Capabilities**
 
@@ -34,18 +34,18 @@ GitVizz is a **powerful Python library** that transforms how you analyze and und
 
 ```bash
 # Install from GitHub (recommended)
-pip install git+https://github.com/YOUR_USERNAME/GitVizz.git#subdirectory=gitvizz
+pip install "codeorbit @ git+https://github.com/vedants254/codeOrbit.git#subdirectory=core"
 
 # Or for development
-git clone https://github.com/YOUR_USERNAME/GitVizz.git
-cd GitVizz/gitvizz
+git clone https://github.com/vedants254/codeOrbit.git
+cd codeOrbit/core
 pip install -e .[dev]
 ```
 
 ### 30-Second Demo
 
 ```python
-from gitvizz import GraphGenerator, GraphSearchTool
+from codeorbit import GraphGenerator, GraphSearchTool
 
 # 🎯 Load any codebase instantly
 graph = GraphGenerator.from_source("path/to/your/project")
@@ -64,7 +64,7 @@ print(context)  # Perfect for ChatGPT/Claude/etc.
 
 ## 🎨 **Visual Code Analysis**
 
-GitVizz creates **beautiful, interactive visualizations** that make complex codebases easy to understand:
+CodeOrbit creates **beautiful, interactive visualizations** that make complex codebases easy to understand:
 
 ### 🖼️ Interactive Dependency Graphs
 
@@ -218,7 +218,7 @@ class EmailService:
 
 ```python
 # Perfect for exploratory analysis
-from gitvizz import GraphGenerator, GraphSearchTool
+from codeorbit import GraphGenerator, GraphSearchTool
 
 # Load your project
 graph = GraphGenerator.from_source("../my-project")
@@ -249,7 +249,7 @@ generator.visualize(
 
 ## 🔄 **Chain-able Operations**
 
-GitVizz's **subgraph-centric API** makes complex analysis incredibly simple:
+CodeOrbit's **subgraph-centric API** makes complex analysis incredibly simple:
 
 ```python
 # 🎯 Every method returns a visualizable subgraph
@@ -312,7 +312,7 @@ test_analysis = GraphSearchTool.combine_subgraphs(
 ### Automatic Project Detection
 
 ```python
-# GitVizz automatically detects project types
+# CodeOrbit automatically detects project types
 generator = GraphGenerator.from_source("nextjs-app/")
 # Detected: Next.js → Uses specialized parsing
 
@@ -490,7 +490,7 @@ shortest_paths = dict(nx.all_pairs_shortest_path_length(nx_graph))
 ### **Modal Serverless Integration**
 
 ```python
-from gitvizz import generate_graph, MODAL_AVAILABLE
+from codeorbit import generate_graph, MODAL_AVAILABLE
 
 if MODAL_AVAILABLE:
     # Scale analysis to the cloud
@@ -524,18 +524,18 @@ See real usage in our test suite:
 
 ---
 
-## 🔗 **GitVizz Ecosystem**
+## 🔗 **CodeOrbit Ecosystem**
 
-This library is part of the larger **GitVizz ecosystem**:
+This library is part of the larger **CodeOrbit ecosystem**:
 
-### **🌐 [GitVizz Platform](https://gitvizz.com)**
+### **🌐 [CodeOrbit Platform](https://github.com/vedants254/codeOrbit)**
 
 - Web-based repository analysis
 - AI-powered code chat
 - Visual dashboard
 - Team collaboration features
 
-### **📚 Full GitVizz Repository**
+### **📚 Full CodeOrbit Repository**
 
 - Complete platform source code
 - Web interface
@@ -557,19 +557,19 @@ We love contributions! Here's how to get started:
 
 ```bash
 # 🚀 Quick setup
-git clone https://github.com/YOUR_USERNAME/GitVizz.git
-cd GitVizz/gitvizz
+git clone https://github.com/vedants254/codeOrbit.git
+cd codeOrbit/core
 pip install -e .[dev]
 
 # 🧪 Run tests
 pytest
 
 # ✨ Format code
-black gitvizz/
-isort gitvizz/
+black codeorbit/
+isort codeorbit/
 
 # 🎯 Type checking
-mypy gitvizz/
+mypy codeorbit/
 ```
 
 ### **Areas where we need help:**
@@ -584,7 +584,7 @@ mypy gitvizz/
 
 ## 📈 **Performance & Scalability**
 
-GitVizz is designed for **real-world codebases**:
+CodeOrbit is designed for **real-world codebases**:
 
 - ⚡ **Fast parsing** with Tree-sitter
 - 🎯 **Smart filtering** to focus on relevant code
@@ -605,7 +605,7 @@ GitVizz is designed for **real-world codebases**:
 
 ## 📄 **License & Support**
 
-**MIT License** - Use GitVizz in any project, commercial or open-source!
+**Apache License 2.0** - See [LICENSE](LICENSE) for terms.
 
 ### **Get Help**
 
@@ -641,7 +641,7 @@ GitVizz is designed for **real-world codebases**:
 **🚀 Ready to revolutionize your code analysis?**
 
 ```bash
-pip install git+https://github.com/YOUR_USERNAME/GitVizz.git#subdirectory=gitvizz
+pip install "codeorbit @ git+https://github.com/vedants254/codeOrbit.git#subdirectory=core"
 ```
 
 **📚 Read the Docs** • **🔍 Explore Examples** • **🛠️ API Reference**
@@ -650,4 +650,4 @@ pip install git+https://github.com/YOUR_USERNAME/GitVizz.git#subdirectory=gitviz
 
 ---
 
-_Built with ❤️ by the GitVizz team. Empowering developers to understand code like never before._
+_Built by Vedant Shelkar and CodeOrbit contributors._

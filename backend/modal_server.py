@@ -41,21 +41,21 @@ image = (
     .run_commands("pip install uv")
     .run_commands("cd /root && uv pip install . --system")
 )
-vol = modal.Volume.from_name("omniparse_backend", create_if_missing=True)
+vol = modal.Volume.from_name("codeorbit_backend", create_if_missing=True)
 
 # Create a Modal app
-app = modal.App("omniparse-code", image=image)
+app = modal.App("codeorbit-backend", image=image)
 
 
 @app.function(
-    secrets=[modal.Secret.from_name("omniparse_cloud"), modal.Secret.from_dotenv()],
+    secrets=[modal.Secret.from_name("codeorbit_cloud"), modal.Secret.from_dotenv()],
     # secrets=[modal.Secret.from_dotenv()],
     volumes={"/data": vol},
     min_containers=1,
     max_containers=10,
 )
 @modal.asgi_app()
-def serve_omniparse_backend():
+def serve_codeorbit_backend():
     import sys
 
     sys.path.append("/root")  # Add the root directory to the Python path

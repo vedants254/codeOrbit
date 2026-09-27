@@ -7,10 +7,10 @@ name = "codeorbit"
 dynamic = ["version"]
 description = "AI-powered codebase analysis library - navigate the orbit of your code"
 readme = "README.md"
-license = "MIT"
+license = "Apache-2.0"
 requires-python = ">=3.8"
 authors = [
-    { name = "CodeOrbit Team", email = "support@codeorbit.dev" },
+    { name = "Vedant Shelkar", email = "vedantshelkar02@gmail.com" },
 ]
 keywords = [
     "code-analysis",
@@ -28,7 +28,7 @@ keywords = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -59,10 +59,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/CodeOrbit"
-Documentation = "https://docs.codeorbit.dev"
-Repository = "https://github.com/YOUR_USERNAME/CodeOrbit.git"
-"Bug Tracker" = "https://github.com/YOUR_USERNAME/CodeOrbit/issues"
+Homepage = "https://github.com/vedants254/codeOrbit"
+Documentation = "https://github.com/vedants254/codeOrbit/tree/main/docs"
+Repository = "https://github.com/vedants254/codeOrbit.git"
+"Bug Tracker" = "https://github.com/vedants254/codeOrbit/issues"
 
 [tool.hatch.version]
 path = "codeorbit/__init__.py"
@@ -88,4 +88,4 @@ disallow_untyped_defs = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-addopts = "-v --cov=gitvizz --cov-report=term-missing"
+addopts = "-v --cov=codeorbit --cov-report=term-missing"
